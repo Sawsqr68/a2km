@@ -43,8 +43,9 @@ def _patched_path() -> Generator[None]:
         if bin_path.name == "bin":
             prefix = bin_path.parent
             jupyter_dir = prefix / "share" / "jupyter"
+            kernels_dir = jupyter_dir / "kernels"
             if (
-                jupyter_dir.exists()
+                kernels_dir.exists()
                 and str(jupyter_dir) not in current_jupyter_path
                 and str(jupyter_dir) not in extra_path
             ):
